@@ -61,7 +61,7 @@ body {
     flex-direction: column;
     justify-content: start;
     padding: 20px 30px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75), -2px -2px 10px rgba(255, 255, 255, 0.75);
     text-decoration: none;
@@ -71,17 +71,20 @@ body {
 }
 
 .applet-a:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transition-duration: 200ms;
+    background: rgba(255, 255, 255, 0.3);
+    transition-duration: 100ms;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.95), -4px -4px 20px rgba(255, 255, 255, 0.95);
 }
 
 .applet-a:active {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .applet-top {
     font-size: 2rem;
     text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .applet-middle {
@@ -104,11 +107,13 @@ body {
 
 .applet-authors {
     flex-wrap: wrap;
+    margin-top: 5px;
 }
 
 .applet-author {
     margin: 0 5px;
     font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .applet-author::after {

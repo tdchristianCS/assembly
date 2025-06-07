@@ -12,7 +12,7 @@ const appletRecords = [
         authors: ['Julia Chung']
     },
     {
-        id: 'button-thing-assembly',
+        id: 'buttonthing-assembly',
         name: 'Funni Buttons',
         course: 'ICS4U 2024-25 S2',
         authors: ['Yannis Shew']
