@@ -1,10 +1,10 @@
 const appletRecords = [
-    {
-        id: 'test',
-        name: 'Test',
-        course: 'Test Course',
-        authors: ['Luke Sawczak', 'David Hagen', 'Crayumbo Radioads']
-    },
+    // {
+    //     id: 'test',
+    //     name: 'Test',
+    //     course: 'Test Course',
+    //     authors: ['Luke Sawczak', 'David Hagen', 'Crayumbo Radioads']
+    // },
     {
         id: 'grocery-rush-assembly',
         name: 'Grocery Rush',
