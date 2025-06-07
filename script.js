@@ -1,4 +1,4 @@
-class App {
+class Applet {
     id;
     name;
     course;
@@ -20,25 +20,71 @@ class App {
     }
 
     format = () => {
-        return `${this.name}`;
+        let inner = [
+            this.formatTop(),
+            this.formatMiddle(),
+            this.formatBottom()
+        ].join("");
+
+        return `<div id="applet-${this.id}" data-applet="${this.id}" class="applet"><a class="applet-a" href="${this.getRepoURL()}">${inner}</a></div>`;
+    }
+
+    formatTop = () => {
+        return `<div class="applet-top">${this.name}</div>`;
+    }
+
+    formatMiddle = () => {
+        return `<div class="applet-middle flexRowCenter"><img src="${this.getScreenshotURL()}"></div>`;
+    }
+
+    formatBottom = () => {
+        let inner = [
+            this.formatAuthors(),
+            this.formatCourse()
+        ].join("");
+
+        return `<div class="applet-bottom">${inner}</div>`;
+    }
+
+    formatAuthors = () => {
+        let parts = [];
+        for (let author of this.authors) {
+            parts.push(this.formatAuthor(author));
+        }
+
+        let inner = parts.join("");
+        return `<div class="applet-authors flexRowCenter">${inner}</div>`;
+        return `<div class="applet-authors flexRowCenter">${inner}</div>`;
+    }
+
+    formatAuthor = (author) => {
+        return `<span class="applet-author">${author}</span>`;
+    }
+
+    formatCourse = () => {
+        return `<div class="applet-course flexRowCenter">${this.course}</div>`;
     }
 }
 
-const layoutApps = () => {
-    $('#apps').empty();
-    for (let app of apps) {
-        $('#apps').append(app.format());
+const readApplets = () => {
+    for (let record of appletRecords) {
+        applets.push(new Applet(record.id, record.name, record.course, record.authors))
+    }
+}
+
+const layoutApplets = () => {
+    $('#applets').empty();
+    for (let applet of applets) {
+        $('#applets').append(applet.format());
     }
 }
 
 const initialize = () => {
     $('#year').text(new Date().getFullYear());
-    layoutApps();
+    readApplets();
+    layoutApplets();
 }
 
-const apps = [
-    new App('grocery-rush-assembly', 'Grocery Rush', 'ICS4U 2024-25 S2', ['Julia Chung']),
-    new App('button-thing-assembly', 'Funni Buttons', 'ICS4U 2024-25 S2', ['Yannis Shew']),
-];
+const applets = [];
 
 $(document).ready(initialize);
