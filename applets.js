@@ -17,4 +17,10 @@ const appletRecords = [
         course: 'ICS4U 2024-25 S2',
         authors: ['Yannis Shew']
     },
+    {
+        id: 'emoji-clash-assembly',
+        name: 'Emoji Clash',
+        course: 'ICS4U 2024-25 S2',
+        authors: ['Michael Mankaruos']
+    },
 ];
